@@ -1,3 +1,9 @@
+/*
+filename: Command.cpp
+author: G.V.Rameswara reddy
+date: 13/04/2020
+*/
+
 #include<iostream>
 #include<string.h>
 #include<stdlib.h>
