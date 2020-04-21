@@ -5,35 +5,35 @@
 */
 
 #include<iostream>
-#include<string.h>
+#include<stdlib.h>
 using namespace std;
 
-//Function Name is SumOfSquares
-
-int SumOfSquares()
+//main function
+int main(int argc,char *argv[])
 {
-		int isum=0;
-		int inum;
-		cout<<"Input	:	";
-		cin>>inum;
-		// Formula for given expression , n(n+1)(2n+1)/6
-		isum = (inum * (inum + 1) * (2 * inum+1)) / 6;   
-		// shows the sum of squares of given number
-   	cout<<"Output	:	"<<isum;	
-}
-
-int main(int argc,char* argv[])
-{
-	//Declaring variables ar required
-   	if((argc==2) && (strcmp(argv[1],"-h")==0))
-	{               
-		{
-		    cout<<"----------Usage Of The File---------------"<<endl;
-			cout<<"Enter any integer value  "<<endl; 
-		}
-	}	
-	else
+    int iSum,iNumb; //declaring integer variables
+    if(argc==1) 
 	{
-		SumOfSquares();
+		cout<<"\n Usage of file --> \n"
+		"\t filename.exe argument"<<endl<<
+		"			or"<<endl<<
+		"\t ./filename.out argument"<<endl;
+		
+		cout<<"Enter Input: ";
+		cin>>iNumb; //read 'iNumb'
+		iSum=0;
+    	for(int i=1; i<=iNumb; ++i)	//checks the argument value
+        	iSum += (i*i);	//gives output based on the expression: 1+4+9+16+….+100
+     	cout << "Output: " << iSum;
+     	return 0;
 	}
+	else
+	{	
+		iNumb = atoi(argv[1]); //assigning the argument to 'n'
+    	iSum=0;
+    	for(int i=1; i<=iNumb; ++i)	//checks the argument value
+        	iSum += (i*i);	//gives output based on the expression: 1+4+9+16+….+100
+     	cout << "Output: " << iSum;
+     	return 0;
+	} 
 }
