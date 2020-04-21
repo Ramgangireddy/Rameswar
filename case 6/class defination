@@ -3,12 +3,11 @@ filename: classdedefination.cpp
 details: int *,chr[30] in private,describle operator overloading, member declarations.
 author: G.V.Rameswara reddy
 date: 15/04/2020
-*/
-#include<iostream>
+*/#include<iostream>
 #include<cstring>
 #include<stdlib.h>
 using namespace std;
-class Student
+class Name
 {
 //declaration of variables in private
 private:
@@ -16,30 +15,30 @@ private:
 	int *iNumb;
 public:
 	//default constructor
-	Student()
+	Name()
 	{
-		cout<<"\t\t Default constructor invoked"<<endl;
+		cout<<"Default constructor invoked"<<endl;
 	}
 	//parametrised constructor
-	Student(char *str)
+	Name(char *str)
 	{
-		cout<<"\t\t Parametrised constructor invoked"<<endl;
+		cout<<"Parametrised constructor invoked"<<endl;
 		strcpy(cName,str);//coping string
 	}
 	//Display function
 	void Display()
 	{
-		cout<<"\t\t Rollno: "<<*iNumb<<endl;
+		cout<<"value: "<<*iNumb<<endl;
 	}
 	//Show function
 	void Show()
 	{
-		cout<<"\t\t Name: "<<cName<<endl;
+		cout<<"Name: "<<cName<<endl;
 	}
 	//overloading oprator'+'
-	Student operator+(Student s)
+	Name operator+(Name s)
 	{
-		Student temp=cName;
+		Name temp=cName;
 		strcat(temp.cName,s.cName);	//adding two strings
 		return temp;
 	}
@@ -54,9 +53,9 @@ public:
 		cName=cName;
 	}
 	//destructor 
-	~Student()
+	~Name()
 	{
-		cout<<"\t\t Destructor invoked"<<endl;
+		cout<<"Destructor invoked"<<endl;
 	}
 };
 
@@ -64,7 +63,7 @@ int main(int argc,char **argv)
 {
 	if(argc==2) 
 	{
-		if(strcmp(argv[1],"-h")==0)     
+		if(strcmp(argv[1],"-h")==0)     //created a help command
         {
 			cout<<"\n Usage of file --> \n"
 					"\t filename.exe & enter"<<endl<<
@@ -74,19 +73,19 @@ int main(int argc,char **argv)
 	}
 	else
 	{	
-		int iValue; 
-		char fname[30],sname[30]; 
-		cout<<"\t\t Enter Rollno:";
+		int iValue; //declaring integer value
+		char fname[30],sname[30]; //declaring character value
+		cout<<"enter value:";
 		cin>>iValue;
-		cout<<"\t\t Surname: ";
+		cout<<"First Name: ";
 		cin>>fname;
-		cout<<"\t\t Middle name: ";
+		cout<<"Second Name: ";
 		cin>>sname;
-		//object declaration
-		Student str1(fname);
-		Student str2=(sname);
-		Student str3;
-		Student s;
+		//object declaration for class "Name"
+		Name str1(fname);
+		Name str2=(sname);
+		Name str3;
+		Name s;
 		str3=str1+str2;
 		s.setValue(&iValue);
 		s.Display();
