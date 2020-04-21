@@ -3,7 +3,9 @@ filename: classdedefination.cpp
 details: int *,chr[30] in private,describle operator overloading, member declarations.
 author: G.V.Rameswara reddy
 date: 15/04/2020
-*/#include<iostream>
+*/
+
+#include<iostream>
 #include<cstring>
 #include<stdlib.h>
 using namespace std;
